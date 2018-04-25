@@ -1,0 +1,42 @@
+@mixin margin() {
+  margin: $margin;
+  &--horizontal {
+    margin: $margin 0;
+  }
+  &--vertical {
+    margin: 0 $margin;
+  }
+  &--top {
+    margin: $margin 0 0 0;
+  }
+  &--right {
+    margin: 0 $margin 0 0;
+  }
+  &--bottom {
+    margin: 0 0 $margin 0;
+  }
+  &--left {
+    margin: 0 0 0 $margin;
+  }
+}
+@mixin padding() {
+  padding: $padding;
+  &--horizontal {
+    padding: $padding 0;
+  }
+  &--vertical {
+    padding: 0 $padding;
+  }
+  &--top {
+    padding: $padding 0 0 0;
+  }
+  &--right {
+    padding: 0 $padding 0 0;
+  }
+  &--bottom {
+    padding: 0 0 $padding 0;
+  }
+  &--left {
+    padding: 0 0 0 $padding;
+  }
+}

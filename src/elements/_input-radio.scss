@@ -1,0 +1,32 @@
+@mixin radio() {
+  @include input-toggle;
+  &::before {
+    content: "\f10c";
+    transform: scale(0.9);
+  }
+  &:checked {
+    &::before {
+      content: "\f192";
+    }
+  }
+}
+@mixin input-radio() {
+  &__input,
+  &__label {
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  &__input {
+    @include radio;
+  }
+  &__label {
+    @include label;
+    margin-left: 0.5rem;
+  }
+}
+.radio {
+  @include radio;
+}
+.input-radio {
+  @include input-radio;
+}

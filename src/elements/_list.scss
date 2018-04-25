@@ -1,0 +1,26 @@
+%list {
+  @extend %font-base;
+  list-style-position: outside;
+  display: block;
+  margin: 1rem 0;
+}
+%list-unordered {
+  @extend %list;
+  list-style-type: disc;
+}
+%list-ordered {
+  @extend %list;
+  list-style-type: decimal;
+}
+%list-item {
+  margin-left: 1rem;
+}
+.list {
+  @extend %list-unordered;
+  &--ordered {
+    @extend %list-ordered;
+  }
+  &__item {
+    @extend %list-item;
+  }
+}

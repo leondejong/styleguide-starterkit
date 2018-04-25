@@ -1,0 +1,36 @@
+@mixin spinner($multiplier: 1) {
+  $small: $multiplier * 4rem;
+  $medium: $multiplier * 8rem;
+  $large: $multiplier * 16rem;
+  $full: $multiplier * 32rem;
+  position: relative;
+  display: inline-block;
+  width: $medium;
+  height: $medium;
+  background: url($gif-directory + 'spinner.gif') no-repeat;
+  background-size: $medium $medium;
+  &--small {
+    width: $small;
+    height: $small;
+    background-size: $small $small;
+  }
+  &--large {
+    width: $large;
+    height: $large;
+    background-size: $large $large;
+  }
+  &--expand {
+    width: $full;
+    height: $full;
+    background-size: $full $full;
+  }
+  &--center {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.spinner {
+  @include spinner(0.5);
+}

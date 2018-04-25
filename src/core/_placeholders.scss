@@ -1,0 +1,122 @@
+%strong {
+  @extend %font-base;
+  font-weight: 700;
+}
+%emphasize {
+  @extend %font-base;
+  font-style: italic;
+}
+%paragraph {
+  @extend %font-base;
+  display: block;
+  margin: 1rem 0;
+}
+%anchor {
+  &,
+  &:link,
+  &:visited {
+    @extend %font-base;
+    text-decoration: underline;
+    outline: none;
+    cursor: pointer;
+  }
+  &:hover {
+    color: darken($color-dark, 10%);
+  }
+  &:active,
+  &:focus {
+    color: darken($color-dark, 20%);
+  }
+}
+%label {
+  @extend %font-base;
+}
+%break {
+  background: transparent;
+}
+%horizontal-row {
+  display: block;
+  margin: 0;
+  border: 0.06125rem solid $color-dark;
+}
+%image {
+  display: inline-block;
+}
+%antialias {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+%font-base {
+  @extend %antialias;
+  font-family: $font-family-base;
+  color: $color-dark;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.3;
+}
+%heading-base {
+  @extend %font-base;
+  font-family: $heading-font-family-base;
+  font-weight: 700;
+}
+%heading-1 {
+  @extend %heading-base;
+  font-size: $font-size-9;
+}
+%heading-2 {
+  @extend %heading-base;
+  font-size: $font-size-8;
+}
+%heading-3 {
+  @extend %heading-base;
+  font-size: $font-size-7;
+}
+%heading-4 {
+  @extend %heading-base;
+  font-size: $font-size-6;
+}
+%heading-5 {
+  @extend %heading-base;
+  font-size: $font-size-5;
+}
+%heading-6 {
+  @extend %heading-base;
+  font-size: $font-size-4;
+}
+%font-1 {
+  @extend %font-base;
+  font-size: $font-size-1;
+}
+%font-2 {
+  @extend %font-base;
+  font-size: $font-size-2;
+}
+%font-3 {
+  @extend %font-base;
+  font-size: $font-size-3;
+}
+%font-4 {
+  @extend %font-base;
+  font-size: $font-size-4;
+}
+%font-5 {
+  @extend %font-base;
+  font-size: $font-size-5;
+}
+%font-6 {
+  @extend %font-base;
+  font-size: $font-size-6;
+}
+%font-7 {
+  @extend %font-base;
+  font-size: $font-size-7;
+}
+%font-8 {
+  @extend %font-base;
+  font-size: $font-size-8;
+}
+%font-9 {
+  @extend %font-base;
+  font-size: $font-size-9;
+}

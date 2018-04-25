@@ -1,0 +1,60 @@
+// Directories
+
+$graphics-directory: './graphics/' !default;
+
+$png-directory: $graphics-directory + 'png/' !default;
+$jpg-directory: $graphics-directory + 'jpg/' !default;
+$gif-directory: $graphics-directory + 'gif/' !default;
+
+// Base colors
+
+$color-white: rgba(255, 255, 255, 1) !default;
+$color-black: rgba(0, 0, 0, 1) !default;
+
+$color-light: rgba(223, 223, 223, 1) !default;
+$color-medium: rgba(127, 127, 127, 1) !default;
+$color-dark: rgba(31, 31, 31, 1) !default;
+
+$color-red: rgba(239, 79, 119, 1) !default;
+$color-orange: rgba(239, 123, 107, 1) !default;
+$color-yellow: rgba(239, 175, 127, 1) !default;
+$color-green: rgba(95, 175, 127, 1) !default;
+$color-cyan: rgba(63,  175, 175, 1) !default;
+$color-blue: rgba(0, 87, 158, 1) !default;
+$color-purple: rgba(87, 63, 159, 1) !default;
+
+$colors: (
+  "white": $color-white,
+  "black": $color-black,
+  "light": $color-light,
+  "dark": $color-dark,
+  "medium": $color-medium,
+  "red": $color-red,
+  "orange": $color-orange,
+  "yellow": $color-yellow,
+  "green": $color-green,
+  "cyan": $color-cyan,
+  "blue": $color-blue,
+  "purple": $color-purple,
+);
+
+$font-family-base: 'Roboto', sans-serif !default;
+$heading-font-family-base: 'Open Sans', sans-serif !default;
+
+// Fonts, Major Third
+// http://www.modularscale.com/
+
+$font-size-1: 0.64rem !default;
+$font-size-2: 0.8rem !default;
+$font-size-3: 1rem !default;
+$font-size-4: 1.25rem !default;
+$font-size-5: 1.563rem !default;
+$font-size-6: 1.953rem !default;
+$font-size-7: 2.441rem !default;
+$font-size-8: 3.052rem !default;
+$font-size-9: 3.815rem !default;
+
+// Dimenions
+
+$margin: 1rem !default;
+$padding: 1rem !default;

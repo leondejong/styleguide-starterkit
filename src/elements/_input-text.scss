@@ -1,0 +1,58 @@
+@mixin input-text() {
+  @extend %font-base;
+  position: relative;
+  display: inline-block;
+  min-width: 16rem;
+  margin: 0;
+  padding: 0.625rem;
+  color: $color-dark;
+  background: transparent;
+  border: 0.125rem solid $color-dark;
+  font-size: 1.25rem;
+  outline: none;
+  &:hover {
+    border: 0.125rem solid darken($color-dark, 10%);
+  }
+  &:focus,
+  &:active,
+  &.active,
+  &--active {
+    border: 0.125rem solid darken($color-dark, 20%);
+  }
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &--expand {
+    display: block;
+    width: 100%;
+  }
+  &--radius {
+    border-radius: 0.5rem;
+  }
+  &::-webkit-input-placeholder {
+    color: $color-medium;
+  }
+  @each $name, $value in $colors {
+    &--#{$name} {
+      color: $value;
+      border-color: $value;
+      &:hover {
+        border-color: darken($value, 10%);
+      }
+      &:focus,
+      &:active,
+      &.active,
+      &.input--active {
+        border-color: darken($value, 20%);
+      }
+      &::-webkit-input-placeholder {
+        color: lighten($value, 5%);
+      }
+    }
+  }
+}
+.input-text {
+  @include input-text;
+}

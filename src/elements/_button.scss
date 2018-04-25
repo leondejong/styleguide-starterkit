@@ -1,0 +1,58 @@
+@mixin button() {
+  &,
+  &:link,
+  &:visited {
+    @extend %font-base;
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    padding: 0.75rem 2rem;
+    background: $color-dark;
+    color: $color-light;
+    text-align: center;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  &:hover {
+    background: darken($color-dark, 10%);
+  }
+  &:focus,
+  &:active,
+  &.active,
+  &--active {
+    background: darken($color-dark, 15%);
+  }
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &--expand {
+    display: block;
+    width: 100%;
+  }
+  &--radius {
+    border-radius: 0.5rem;
+  }
+  @each $name, $value in $colors {
+    &--#{$name} {
+      background: $value;
+      &:hover {
+        background: darken($value, 10%);
+      }
+      &:focus,
+      &:active,
+      &.active,
+      &.button--active {
+        background: darken($value, 15%);
+      }
+    }
+  }
+}
+.button {
+  @include button;
+}

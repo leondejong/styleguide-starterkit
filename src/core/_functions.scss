@@ -1,0 +1,13 @@
+$context: 16;
+@function px2rem($value, $context: $context) {
+  @if (unitless($value)) {
+    $value: $value * 1px;
+  }
+  @if (unitless($context)) {
+    $context: $context * 1px;
+  }
+  @if (unit($value) == 'px') {
+    @return $value / $context * 1rem;
+  }
+  @return $value;
+}
