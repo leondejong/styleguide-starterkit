@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@font-face {
+  font-family: 'Font-Awesome';
+  src: url(./fonts/fontawesome.woff);
+}
+* {
+  &,
+  &::before,
+  &::after {
+    box-sizing: inherit;
+    position: relative;
+  }
+}
+html {
+  @extend %antialias;
+  box-sizing: border-box;
+  font-size: 100%;
+}
+body {
+  @extend %font-base;
+  color: $color-dark;
+  background: $color-light;
+}
+strong,
+b {
+  @extend %strong;
+}
+em,
+i {
+  @extend %emphasize;
+}
+p {
+  @extend %paragraph;
+}
+a {
+  @extend %anchor;
+}
+label {
+  @extend %label;
+}
+br {
+  @extend %break;
+}
+hr {
+  @extend %horizontal-row;
+}
+img {
+  @extend %image;
+}
+ul {
+  @extend %list-unordered;
+}
+ol {
+  @extend %list-ordered;
+}
+li {
+  @extend %list-item;
+}
+table {
+  @extend %table;
+}
+col {
+  @extend %table-column;
+}
+tr {
+  @extend %table-row;
+}
+th {
+  @extend %table-head;
+}
+td {
+  @extend %table-cell;
+}
+h1 {
+  @extend %heading-1;
+}
+h2 {
+  @extend %heading-2;
+}
+h3 {
+  @extend %heading-3;
+}
+h4 {
+  @extend %heading-4;
+}
+h5 {
+  @extend %heading-5;
+}
+h6 {
+  @extend %heading-6;
+}

@@ -1,0 +1,166 @@
+.strong {
+  @extend %strong;
+}
+.emphasize {
+  @extend %emphasize;
+}
+.paragraph {
+  @extend %paragraph;
+}
+.anchor {
+  @extend %anchor;
+}
+.label {
+  @extend %label;
+}
+.break {
+  @extend %break;
+}
+.horizontal-row {
+  @extend %horizontal-row;
+}
+.image {
+  @extend %image;
+}
+.list {
+  @extend %list;
+}
+.list-unordered {
+  @extend %list-unordered;
+}
+.list-ordered {
+  @extend %list-ordered;
+}
+.list-item {
+  @extend %list-item;
+}
+.table {
+  @extend %table;
+}
+.table-column {
+  @extend %table-column;
+}
+.table-row {
+  @extend %table-row;
+}
+.cell {
+  @extend %cell;
+}
+.table-head {
+  @extend %table-head;
+}
+.table-cell {
+  @extend %table-cell;
+}
+.margin {
+  @include margin;
+}
+.padding {
+  @include padding;
+}
+.float {
+  &--left {
+    float: left;
+  }
+  &--right {
+    float: right;
+  }
+  &--none {
+    float: none;
+  }
+}
+.align {
+  &--left {
+    text-align: left;
+  }
+  &--right {
+    text-align: right;
+  }
+  &--center {
+    text-align: center;
+  }
+  &--top {
+    vertical-align: top;
+  }
+  &--bottom {
+    vertical-align: bottom;
+  }
+  &--middle {
+    vertical-align: middle;
+  }
+}
+.heading {
+  &--1,
+  &--one {
+    @extend %heading-1;
+  }
+  &--2,
+  &--two {
+    @extend %heading-2;
+  }
+  &--3,
+  &--three {
+    @extend %heading-3;
+  }
+  &--4,
+  &--four {
+    @extend %heading-4;
+  }
+  &--5,
+  &--five {
+    @extend %heading-5;
+  }
+  &--6,
+  &--six {
+    @extend %heading-6;
+  }
+}
+.font {
+  &--1,
+  &--one {
+    @extend %font-1;
+  }
+  &--2,
+  &--two {
+    @extend %font-2;
+  }
+  &--3,
+  &--three {
+    @extend %font-3;
+  }
+  &--4,
+  &--four {
+    @extend %font-4;
+  }
+  &--5,
+  &--five {
+    @extend %font-5;
+  }
+  &--6,
+  &--six {
+    @extend %font-6;
+  }
+  &--7,
+  &--seven {
+    @extend %font-7;
+  }
+  &--8,
+  &--eight {
+    @extend %font-8;
+  }
+  &--9,
+  &--nine {
+    @extend %font-9;
+  }
+}
+@each $name, $value in $colors {
+  .color--#{$name} {
+    color: $value;
+  }
+  .background--#{$name} {
+    background: $value;
+  }
+  .border--#{$name} {
+    border-color: $value;
+  }
+}

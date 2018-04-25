@@ -1,0 +1,35 @@
+@mixin label {
+  @extend %label;
+  color: $color-dark;
+  &:hover {
+    color: darken($color-dark, 10%);
+  }
+  &:focus,
+  &:active,
+  &.active,
+  &--active {
+    color: darken($color-dark, 20%);
+  }
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  @each $name, $value in $colors {
+    &--#{$name} {
+      color: $value;
+      &:hover {
+        color: darken($value, 10%);
+      }
+      &:focus,
+      &:active,
+      &.active,
+      &--active {
+        color: darken($value, 20%);
+      }
+    }
+  }
+}
+.label {
+  @include label;
+}

@@ -1,0 +1,50 @@
+@mixin input-toggle() {
+  @include icon;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &::before {
+    content: "\f096";
+    color: $color-dark;
+    font-size: 1.5rem;
+  }
+  &:checked {
+    &::before {
+      content: "\f046";
+    }
+  }
+  &:hover::before {
+    color: darken($color-dark, 10%);
+  }
+  &:focus::before,
+  &:active::before,
+  &.active::before,
+  &--active::before {
+    color: darken($color-dark, 20%);
+  }
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  @each $name, $value in $colors {
+    &--#{$name} {
+      color: $value;
+      &:before {
+        color: $value;
+      }
+      &:hover::before {
+        color: darken($value, 10%);
+      }
+      &:focus::before,
+      &:active::before,
+      &.active::before,
+      &--active::before {
+        color: darken($value, 20%);
+      }
+    }
+  }
+}
+.input-toggle {
+  @include input-toggle;
+}

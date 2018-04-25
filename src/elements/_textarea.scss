@@ -1,0 +1,8 @@
+.textarea {
+  @include input-text;
+  min-height: 6.5rem;
+  resize: none;
+  &--resize {
+    resize: both;
+  }
+}

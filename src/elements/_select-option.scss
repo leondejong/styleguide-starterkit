@@ -1,0 +1,140 @@
+@mixin select() {
+  @extend %font-base;
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  padding: 0.7125rem;
+  color: $color-dark;
+  background: transparent;
+  border: 0.125rem solid $color-dark;
+  border-radius: 0;
+  font-size: 1.25rem;
+  outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  &:hover {
+    border-color: darken($color-dark, 10%);
+  }
+  &:focus,
+  &:active,
+  &.active,
+  &--active {
+    border-color: darken($color-dark, 20%);
+  }
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &__option {
+    font-size: 1.25rem;
+    &:checked {
+      background: $color-medium linear-gradient(0deg, $color-medium 0%, $color-medium 100%);
+    }
+  }
+  &--expand {
+    display: block;
+    width: 100%;
+  }
+  &--radius {
+    border-radius: 0.5rem;
+  }
+  &--radius &__option {
+    border-radius: 0.5rem;
+  }
+  @each $name, $value in $colors {
+    &--#{$name} {
+      color: $value;
+      border-color: $value;
+      &:hover {
+        border-color: darken($value, 10%);
+      }
+      &:focus,
+      &:active,
+      &.active,
+      &.select--active {
+        border-color: darken($value, 20%);
+      }
+      .select__option {
+        &:checked {
+          background: $value linear-gradient(0deg, $value 0%, $value 100%);
+        }
+      }
+    }
+  }
+}
+@mixin select-option() {
+  @include icon;
+  &::before {
+    content: "\f078";
+    position: absolute;
+    top: 1.15rem;
+    right: 0.85rem;
+    font-size: 1rem;
+    color: $color-dark;
+  }
+  &:hover::before {
+    color: darken($color-dark, 10%);
+  }
+  &:focus::before,
+  &:active::before,
+  &.active::before,
+  &--active::before {
+    color: darken($color-dark, 20%);
+  }
+  &:disabled,
+  &[disabled] {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  &__select {
+    @include select;
+    min-width: 0;
+    padding: 0.7125rem 2rem 0.7125rem 0.7125rem;
+  }
+  &:hover &__select {
+    border-color: darken($color-dark, 10%);
+  }
+  &:focus &__select,
+  &:active &__select,
+  &.active &__select,
+  &--active &__select {
+    border-color: darken($color-dark, 20%);
+  }
+  &--expand {
+    display: block;
+    width: 100%;
+  }
+  @each $name, $value in $colors {
+    &--#{$name} {
+      &::before {
+        color: $value;
+      }
+      &:hover::before {
+        color: darken($value, 10%);
+      }
+      &:focus::before,
+      &:active::before,
+      &.active::before,
+      &--active::before {
+        color: darken($value, 20%);
+      }
+    }
+    &--#{$name}:hover &__select {
+      border-color: darken($value, 10%);
+    }
+    &--#{$name}:focus &__select,
+    &--#{$name}:active &__select,
+    &--#{$name}.active &__select,
+    &--#{$name}--active &__select {
+      border-color: darken($value, 20%);
+    }
+  }
+}
+.select {
+  @include select;
+}
+.select-option {
+  @include select-option;
+}

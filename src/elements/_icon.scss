@@ -1,0 +1,57 @@
+// http://fontawesome.io/icons
+// https://github.com/FortAwesome/Font-Awesome/blob/master/web-fonts-with-css/scss/_variables.scss
+$icons: (
+  "arrow-up": "\f062",
+  "arrow-down": "\f063",
+  "arrow-left": "\f060",
+  "arrow-right": "\f061",
+  "chevron-up": "\f077",
+  "chevron-down": "\f078",
+  "chevron-left": "\f053",
+  "chevron-right": "\f054",
+  "check": "\f00c",
+  "square": "\f0c8",
+  "square-o": "\f096",
+  "check-square": "\f14a",
+  "check-square-o": "\f046",
+  "circle": "\f111",
+  "circle-o": "\f10c",
+  "dot-circle-o": "\f192",
+  "lock": "\f023",
+  "search": "\f002",
+  "envelope": "\f0e0",
+  "phone": "\f095",
+  "facebook": "\f09a",
+  "twitter": "\f099",
+);
+@mixin icon() {
+  @extend %font-base;
+  position: relative;
+  display: inline-block;
+  &::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 Font-Awesome;
+    font-size: inherit;
+    color: $color-dark;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  @each $name, $value in $icons {
+    &--#{$name} {
+      &::before {
+        content: $value;
+      }
+    }
+  }
+  @each $name, $value in $colors {
+    &--#{$name} {
+      &::before {
+        color: $value;
+      }
+    }
+  }
+}
+.icon {
+  @include icon;
+}

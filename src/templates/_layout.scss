@@ -1,0 +1,36 @@
+.layout {
+  margin: 1rem;
+  &__header,
+  &__footer {
+    padding: 1rem;
+  }
+  &__main {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  &__title {
+    font-size: 7rem;
+    text-align: center;
+    color: $color-medium;
+  }
+  &__content,
+  &__left,
+  &__right {
+    padding: 1rem;
+  }
+  &__content {
+    grid-column: 1 / 12;
+  }
+  &__left {
+    grid-column: 1 / 7;
+  }
+  &__right {
+    grid-column: 7 / 12;
+  }
+  &--spaced {
+    margin: 0.5rem 0.5rem 0 0;
+    > * {
+      margin: 0.5rem 0.5rem 0 0;
+    }
+  }
+}

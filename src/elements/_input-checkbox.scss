@@ -1,0 +1,32 @@
+@mixin checkbox() {
+  @include input-toggle;
+  &::before {
+    content: "\f096";
+  }
+  &:checked {
+    margin: 0 -0.20rem 0 0;
+    &::before {
+      content: "\f046";
+    }
+  }
+}
+@mixin input-checkbox() {
+  &__input,
+  &__label {
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  &__input {
+    @include checkbox;
+  }
+  &__label {
+    @include label;
+    margin-left: 0.5rem;
+  }
+}
+.checkbox {
+  @include checkbox;
+}
+.input-checkbox {
+  @include input-checkbox;
+}

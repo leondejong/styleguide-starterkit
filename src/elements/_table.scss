@@ -1,0 +1,45 @@
+$table-border: 0.125rem solid $color-dark;
+%table {
+  @extend %font-base;
+  display: table;
+}
+%table-column {
+  display: table-column;
+}
+%table-row {
+  display: table-row;
+  border-top: $table-border;
+  &:last-child {
+    border-bottom: $table-border;
+  }
+}
+%cell {
+  display: table-cell;
+  padding: 1rem;
+  border-left: $table-border;
+  &:last-child {
+    border-right: $table-border;
+  }
+}
+%table-head {
+  @extend %cell;
+  font-weight: 700;
+}
+%table-cell {
+  @extend %cell;
+}
+.table {
+  @extend %table;
+  &__column {
+    @extend %table-column;
+  }
+  &__row {
+    @extend %table-row;
+  }
+  &__head {
+    @extend %table-head;
+  }
+  &__cell {
+    @extend %table-cell;
+  }
+}
