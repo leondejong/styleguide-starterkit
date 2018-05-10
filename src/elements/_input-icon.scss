@@ -1,0 +1,66 @@
+@mixin input-icon() {
+  display: inline-block;
+  &--expand {
+    @extend .input-text--expand;
+  }
+  &--expand &__input {
+    @extend .input-text--expand;
+  }
+  &__input {
+    @include input-text;
+    width: 16rem;
+    min-width: 13.25rem;
+    padding-left: 2.75rem;
+  }
+  &__input:hover + &__icon {
+    &::before {
+      color: darken($color-dark, 10%);
+    }
+  }
+  &__input:focus + &__icon,
+  &__input:active + &__icon,
+  &__input.active + &__icon,
+  &__input--active + &__icon {
+    &::before {
+      color: darken($color-dark, 20%);
+    }
+  }
+  &__input:disabled + &__icon,
+  &__input[disabled] + &__icon {
+    &::before {
+      opacity: 0.5;
+    }
+  }
+  &__icon {
+    position: absolute;
+    top: 1rem;
+    left: 1.25rem;
+    &::before {
+      color: $color-dark;
+      // font-size: 1.25rem;
+    }
+  }
+  @each $name, $value in $colors {
+    &__icon--#{$name} {
+      &::before {
+        color: $value;
+      }
+    }
+    &__input:hover + &__icon--#{$name} {
+      &::before {
+        color: darken($value, 10%);
+      }
+    }
+    &__input:focus + &__icon--#{$name},
+    &__input:active + &__icon--#{$name},
+    &__input.active + &__icon--#{$name},
+    &__input--active + &__icon--#{$name} {
+      &::before {
+        color: darken($value, 20%);
+      }
+    }
+  }
+}
+.input-icon {
+  @include input-icon;
+}

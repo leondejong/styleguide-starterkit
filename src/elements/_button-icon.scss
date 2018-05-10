@@ -1,0 +1,102 @@
+@mixin button-icon() {
+  &--icon,
+  &--icon:link,
+  &--icon:visited {
+    padding-left: 2.75rem;
+    &::before {
+      position: absolute;
+      top: 1rem;
+      left: 1rem;
+      color: $color-light;
+      font-size: 1.25rem;
+    }
+  }
+  &--icon#{&}--small,
+  &--icon#{&}--small:link,
+  &--icon#{&}--small:visited {
+    padding-left: 2rem;
+    &::before {
+      top: 0.625rem;
+      left: 0.625rem;
+      font-size: 1rem;
+    }
+  }
+  &--icon#{&}--large,
+  &--icon#{&}--large:link,
+  &--icon#{&}--large:visited {
+    padding-left: 3.5rem;
+    &::before {
+      top: 1.25rem;
+      left: 1.25rem;
+      font-size: 1.5rem;
+    }
+  }
+  &--icon#{&}--inverse,
+  &--icon#{&}--inverse:link,
+  &--icon#{&}--inverse:visited {
+    &::before {
+      color: $color-dark;
+    }
+  }
+  &--icon#{&}--outline,
+  &--icon#{&}--outline:link,
+  &--icon#{&}--outline:visited {
+    padding-left: 2.625rem;
+    &::before {
+      position: absolute;
+      top: 0.875rem;
+      left: 0.875rem;
+      color: $color-dark;
+    }
+  }
+  &--icon#{&}--outline#{&}--small,
+  &--icon#{&}--outline#{&}--small:link,
+  &--icon#{&}--outline#{&}--small:visited {
+    padding-left: 1.875rem;
+    &::before {
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      color: $color-dark;
+    }
+  }
+  &--icon#{&}--outline#{&}--large,
+  &--icon#{&}--outline#{&}--large:link,
+  &--icon#{&}--outline#{&}--large:visited {
+    padding-left: 3.375rem;
+    &::before {
+      position: absolute;
+      top: 1.125rem;
+      left: 1.125rem;
+      color: $color-dark;
+    }
+  }
+  &--icon#{&}--outline:hover {
+    &::before {
+      color: darken($color-dark, 10%);
+    }
+  }
+  &--icon#{&}--outline:focus,
+  &--icon#{&}--outline:active,
+  &--icon#{&}--outline.active,
+  &--icon#{&}--outline#{&}--active {
+    &::before {
+      color: darken($color-dark, 20%);
+    }
+  }
+  @each $name, $value in $colors {
+    &--icon#{&}--inverse#{&}--#{$name},
+    &--icon#{&}--outline#{&}--#{$name},
+    &--icon#{&}--inverse#{&}--#{$name}:link,
+    &--icon#{&}--outline#{&}--#{$name}:link,
+    &--icon#{&}--inverse#{&}--#{$name}:visited,
+    &--icon#{&}--outline#{&}--#{$name}:visited {
+      &::before {
+        color: $value;
+      }
+    }
+  }
+}
+.button {
+  @include button-icon;
+}

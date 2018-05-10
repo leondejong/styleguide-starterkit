@@ -1,0 +1,99 @@
+@mixin button-options() {
+  &--inverse,
+  &--inverse:link,
+  &--inverse:visited {
+    background: $color-light;
+    color: $color-dark;
+    &:hover {
+      background: darken($color-light, 10%);
+    }
+    &:focus,
+    &:active,
+    &.active,
+    &.button--active {
+      background: darken($color-light, 15%);
+    }
+  }
+  &--outline,
+  &--outline:link,
+  &--outline:visited {
+    padding: 0.625rem 1.875rem;
+    background: transparent;
+    color: $color-dark;
+    border: 0.125rem solid $color-dark;
+    &:hover {
+      background: transparent;
+      color: darken($color-dark, 10%);
+      border-color: darken($color-dark, 10%);
+    }
+    &:focus,
+    &:active,
+    &.active,
+    &.button--active {
+      background: transparent;
+      color: darken($color-dark, 20%);
+      border-color: darken($color-dark, 20%);
+    }
+  }
+  &--small,
+  &--small:link,
+  &--small:visited {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
+  &--small#{&}--outline,
+  &--small#{&}--outline:link,
+  &--small#{&}--outline:visited {
+    padding: 0.375rem 0.875rem;
+  }
+  &--large,
+  &--large:link {
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+  }
+  &--large#{&}--outline,
+  &--large#{&}--outline:link,
+  &--large#{&}--outline:visited {
+    padding: 0.875rem 2.875rem;
+  }
+  @each $name, $value in $colors {
+    &--#{$name}.button--inverse,
+    &--#{$name}.button--inverse:link,
+    &--#{$name}.button--inverse:visited {
+      background: $color-light;
+      color: $value;
+      &:hover {
+        background: darken($color-light, 10%);
+      }
+      &:focus,
+      &:active,
+      &.active,
+      &.button--active {
+        background: darken($color-light, 15%);
+      }
+    }
+    &--#{$name}.button--outline,
+    &--#{$name}.button--outline:link,
+    &--#{$name}.button--outline:visited {
+      background: transparent;
+      color: $value;
+      border-color: $value;
+      &:hover {
+        background: transparent;
+        color: darken($value, 10%);
+        border-color: darken($value, 10%);
+      }
+      &:focus,
+      &:active,
+      &.active,
+      &.button--active {
+        background: transparent;
+        color: darken($value, 20%);
+        border-color: darken($value, 20%);
+      }
+    }
+  }
+}
+.button {
+  @include button-options;
+}
